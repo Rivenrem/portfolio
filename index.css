@@ -1,5 +1,5 @@
-@import url(./assets/css/variables/_themeColors.css);
-@import url(./assets/css/normalize.css);
+@import url(./src/assets/css/variables/_themeColors.css);
+@import url(./src/assets/css/normalize.css);
 
 html {
   background-color: var(--color-main-background);
