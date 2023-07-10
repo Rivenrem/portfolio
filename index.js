@@ -1,31 +1,23 @@
-const html = document.querySelector("html");
-
 let currentTabInPortfolio = document.querySelector(".portfolio__content");
 
-document
-  .querySelector(".theme-toggle")
-  .addEventListener("click", () => changeTheme());
+document.querySelector(".theme-toggle").addEventListener("click", changeTheme);
 
-document.querySelectorAll("input[type='radio']").forEach((input) => {
-  input.addEventListener("change", () => {
-    changeTabInPortfolio();
-  });
-});
+document
+  .querySelector("#tabToggle")
+  .addEventListener("change", changeTabInPortfolio);
 
 function changeTheme() {
-  html.setAttribute(
+  document.documentElement.setAttribute(
     "color-scheme",
-    html.getAttribute("color-scheme") === "light" ? "dark" : "light"
+    document.documentElement.getAttribute("color-scheme") === "light"
+      ? "dark"
+      : "light"
   );
 }
 
-function changeTabInPortfolio() {
+function changeTabInPortfolio(event) {
   currentTabInPortfolio.classList.add("hidden");
-
-  const currentClasssName = document.querySelector(
-    "input[type='radio']:checked"
-  ).value;
-
-  currentTabInPortfolio = document.querySelector(`.${currentClasssName}`);
+  currentTabInPortfolio = document.querySelector(`.${event.target.value}`);
   currentTabInPortfolio.classList.remove("hidden");
+  console.log(currentTabInPortfolio);
 }

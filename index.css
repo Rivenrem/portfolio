@@ -1,5 +1,6 @@
 @import url(./src/assets/css/variables/themeColors.css);
 @import url(./src/assets/css/normalize.css);
+@import url(./src/assets/css/font.css);
 
 html {
   background-color: var(--color-main-background);
@@ -11,9 +12,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 3rem 0;
-  box-sizing: border-box;
   gap: 3rem;
+  margin: 3rem 1rem;
+  box-sizing: border-box;
   color: var(--color-font);
 }
 
@@ -35,6 +36,10 @@ main {
 .theme-toggle__image {
   width: 2rem;
   height: 2rem;
+}
+
+.changed-icon {
+  fill: var(--color-font);
 }
 
 .preview {
@@ -89,7 +94,7 @@ main {
   justify-content: space-between;
 }
 
-.preview__facts span {
+.preview__fact {
   line-height: 1.5rem;
   text-align: center;
 }
@@ -100,7 +105,8 @@ main {
   gap: 1rem;
 }
 
-.preview__action-buttons a {
+.preview__action-buttons--yellow,
+.preview__action-buttons--white {
   text-align: center;
   border: none;
   border-radius: 0.5rem;
@@ -121,20 +127,20 @@ main {
 .portfolio {
   display: flex;
   flex-direction: column;
+  gap: 3rem;
   width: 100%;
   max-width: 34rem;
-  gap: 3rem;
 }
 
-.portfolio__navigation {
+.portfolio__navigation-form {
   display: flex;
+  gap: 1rem;
   border-radius: 0.7rem;
   padding: 1rem 1rem;
   background-color: var(--color-button);
-  gap: 1rem;
 }
 
-.portfolio__navigation label {
+.portfolio__label {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -145,7 +151,7 @@ main {
   cursor: pointer;
 }
 
-.portfolio__navigation input:checked + label {
+.portfolio__navigation-form input:checked + label {
   background-color: var(--color-active-button);
 }
 
@@ -155,7 +161,7 @@ main {
   gap: 1rem;
 }
 
-.portfolio__content a {
+.portfolio__item {
   position: relative;
   overflow: hidden;
   border-radius: 0.7rem;
@@ -163,13 +169,18 @@ main {
   background-color: var(--color-black);
 }
 
-.portfolio__content a img {
-  opacity: 0.5;
+.portfolio__item > img {
+  opacity: 0.7;
   width: 100%;
   height: 100%;
 }
 
-.shield {
+.portfolio__skills {
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio__shield {
   position: absolute;
   display: flex;
   z-index: 1;
@@ -183,17 +194,23 @@ main {
   color: var(--color-permanent-font);
 }
 
-.shield__description {
+.portfolio__shield:hover {
+  opacity: 0.8;
+  cursor: url("./src/assets/icons/cursor.svg"), auto;
+}
+
+.portfolio__item-description {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   margin: 1rem 1rem 0;
   font-size: 14px;
+  color: var(--color-black);
 }
 
-.shield__description::after {
-  content: url(./assets/icons/link.svg);
+.portfolio__item-description::after {
+  content: url(./src/assets/icons/link.svg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -202,24 +219,11 @@ main {
   height: 1.7rem;
   background-color: var(--color-white);
 }
-.shield:hover {
-  opacity: 0.8;
-  cursor: url("./assets/icons/cursor.svg"), auto;
-}
-
-footer {
-  padding: 2rem 1rem;
-}
-
-.changed-icon {
-  fill: var(--color-font);
-}
 
 .hidden {
   display: none;
 }
 
-@font-face {
-  font-family: poppins;
-  src: url(./assets/fonts/Poppins-Regular.ttf);
+footer {
+  padding: 2rem 1rem;
 }

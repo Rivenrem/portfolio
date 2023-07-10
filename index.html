@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./src/assets/icons/favicon.svg"
+    />
     <link rel="stylesheet" href="./index.css" />
     <link rel="stylesheet" href="./src/assets/css/phone.css" />
     <title>Portfolio</title>
@@ -69,19 +74,19 @@
         </div>
 
         <div class="preview__facts">
-          <span>
+          <span class="preview__fact">
             7<br />
             Years of work<br />
             experience
           </span>
 
-          <span>
+          <span class="preview__fact">
             50+<br />
             Completed<br />
             Projects
           </span>
 
-          <span>
+          <span class="preview__fact">
             20+<br />
             satisfied<br />
             Customers
@@ -104,81 +109,99 @@
 
       <section class="portfolio">
         <nav class="portfolio__navigation">
-          <input
-            type="radio"
-            name="navigation"
-            id="portfolio"
-            value="portfolio__content"
-            checked
-            hidden
-          />
-          <label for="portfolio">Portfolio</label>
+          <form class="portfolio__navigation-form" id="tabToggle">
+            <input
+              type="radio"
+              name="navigation"
+              id="portfolioTab"
+              value="portfolio__content"
+              checked
+              hidden
+            />
+            <label class="portfolio__label" for="portfolioTab">Portfolio</label>
 
-          <input
-            type="radio"
-            name="navigation"
-            id="skills"
-            value="portfolio__skills"
-            hidden
-          />
-          <label for="skills">Skills</label>
+            <input
+              type="radio"
+              name="navigation"
+              id="skillsTab"
+              value="portfolio__skills"
+              hidden
+            />
+            <label class="portfolio__label" for="skillsTab">Skills</label>
+          </form>
         </nav>
 
         <div class="portfolio__content">
-          <a href="https://stochy.com/">
-            <div class="shield">
+          <a class="portfolio__item" href="https://stochy.com/" target="_blank">
+            <div class="portfolio__shield">
               <b>Stochy.com</b>
-              <span class="shield__description">
+              <span class="portfolio__item-description">
                 Cryptocurrency, precious metals and company shares Forecast
               </span>
             </div>
             <img src="./src/assets/images/stochy.png" alt="stochy" />
           </a>
 
-          <a href="https://github.com/Rivenrem/MemoGame">
-            <div class="shield">
+          <a
+            class="portfolio__item"
+            href="https://github.com/Rivenrem/MemoGame"
+            target="_blank"
+          >
+            <div class="portfolio__shield">
               <b>Flip card game Memo</b>
-              <span class="shield__description">
+              <span class="portfolio__item-description">
                 Select two cards with same content to make them vanish
               </span>
             </div>
             <img src="./src/assets/images/memo.png" alt="memo" />
           </a>
 
-          <a href="https://github.com/Rivenrem/newsApp">
-            <div class="shield">
+          <a
+            class="portfolio__item"
+            href="https://github.com/Rivenrem/newsApp"
+            target="_blank"
+          >
+            <div class="portfolio__shield">
               <b>News Application</b>
-              <span class="shield__description">
+              <span class="portfolio__item-description">
                 Type any category and read fresh news
               </span>
             </div>
             <img src="./src/assets/images/newsApp.png" alt="news app" />
           </a>
 
-          <a href="https://github.com/Rivenrem/TelegramBot">
-            <div class="shield">
+          <a
+            class="portfolio__item"
+            href="https://github.com/Rivenrem/TelegramBot"
+            target="_blank"
+          >
+            <div class="portfolio__shield">
               <b>Telegram Bot</b>
-              <span class="shield__description">
+              <span class="portfolio__item-description">
                 Task management, weather subscription and other
               </span>
             </div>
             <img src="./src/assets/images/telegramBot.png" alt="telegram bot" />
           </a>
 
-          <a href="https://rivenrem.github.io/calculator/FC">
-            <div class="shield">
+          <a
+            class="portfolio__item"
+            href="https://rivenrem.github.io/calculator/FC"
+            target="_blank"
+          >
+            <div class="portfolio__shield">
               <b>Calculator</b>
-              <span class="shield__description">
+              <span class="portfolio__item-description">
                 Calculator with brackets functionality
               </span>
             </div>
             <img src="./src/assets/images/calculator.png" alt="calculator" />
           </a>
 
-          <a href="#">
-            <div class="shield">
+          <a class="portfolio__item" href="#">
+            <div class="portfolio__shield">
               <b>ADIncubator</b>
-              <span class="shield__description">
+              <span class="portfolio__item-description">
                 Application for management AD accounts
               </span>
             </div>

@@ -1,8 +1,6 @@
-@media (max-width: 40rem) {
-  body {
+@media (max-width: 600px) {
+  html {
     font-size: 16px;
-    gap: 1rem;
-    margin: 1rem 0;
   }
 
   .preview__profile {
@@ -10,34 +8,27 @@
     align-items: center;
   }
 
+  .preview__photo {
+    width: 7rem;
+  }
+
   .preview__info {
     align-items: center;
-  }
-
-  .preview {
-    width: 90%;
-  }
-
-  .preview__photo {
-    scale: 0.8;
   }
 
   .preview__name {
     text-align: center;
   }
 
-  .preview__action-buttons {
-    justify-content: center;
-  }
-
-  .preview__action-buttons a {
+  .preview__action-buttons--yellow,
+  .preview__action-buttons--white {
     font-size: 12px;
-    padding: 0.7rem 1rem;
+    padding: 1rem 1rem;
   }
 
-  .preview__action-buttons--yellow img {
-    width: 0.5rem;
-    height: 0.5rem;
+  .preview__action-buttons--yellow > img {
+    width: 0.7rem;
+    height: 0.7rem;
   }
 
   .preview__icon {
@@ -45,15 +36,11 @@
     height: 1rem;
   }
 
-  .portfolio {
-    width: 90%;
-  }
-
-  .portfolio__navigation {
-    padding: 0.3rem 0.3rem;
-  }
-
   .portfolio__content {
     grid-template-columns: 1fr;
+  }
+
+  .portfolio__item {
+    height: auto;
   }
 }
