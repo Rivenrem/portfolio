@@ -43,4 +43,13 @@
   .portfolio__item {
     height: auto;
   }
+
+  .portfolio__skills {
+    grid-template-columns: 1fr;
+  }
+
+  .modal__section {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }

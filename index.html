@@ -9,11 +9,11 @@
       href="./src/assets/icons/favicon.svg"
     />
     <link rel="stylesheet" href="./index.css" />
-    <link rel="stylesheet" href="./src/assets/css/phone.css" />
+    <link rel="stylesheet" href="./src/assets/css/phoneMedia.css" />
     <title>Portfolio</title>
   </head>
   <body>
-    <header>
+    <header id="scroll-to">
       <button class="theme-toggle">
         <svg class="theme-toggle__image changed-icon" viewBox="0 0 34 34">
           <path
@@ -103,31 +103,35 @@
             <img src="./src/assets/icons/download.svg" alt="download cv" />
           </a>
 
-          <a class="preview__action-buttons--white"> Contact me </a>
+          <a class="preview__action-buttons--white" id="open-modal">
+            Contact me
+          </a>
         </div>
       </section>
 
       <section class="portfolio">
         <nav class="portfolio__navigation">
-          <form class="portfolio__navigation-form" id="tabToggle">
+          <form class="portfolio__navigation-form" id="tab-toggle">
             <input
               type="radio"
               name="navigation"
-              id="portfolioTab"
+              id="portfolio-tab"
               value="portfolio__content"
               checked
               hidden
             />
-            <label class="portfolio__label" for="portfolioTab">Portfolio</label>
+            <label class="portfolio__label" for="portfolio-tab"
+              >Portfolio</label
+            >
 
             <input
               type="radio"
               name="navigation"
-              id="skillsTab"
+              id="skills-tab"
               value="portfolio__skills"
               hidden
             />
-            <label class="portfolio__label" for="skillsTab">Skills</label>
+            <label class="portfolio__label" for="skills-tab">Skills</label>
           </form>
         </nav>
 
@@ -186,7 +190,7 @@
 
           <a
             class="portfolio__item"
-            href="https://rivenrem.github.io/calculator/FC"
+            href="https://rivenrem.github.io/calculator"
             target="_blank"
           >
             <div class="portfolio__shield">
@@ -202,7 +206,7 @@
             <div class="portfolio__shield">
               <b>ADIncubator</b>
               <span class="portfolio__item-description">
-                Application for management AD accounts
+                Application for management AD accounts(in progress)
               </span>
             </div>
             <img src="./src/assets/images/adInc.png" alt="ADIncubator" />
@@ -210,13 +214,106 @@
         </div>
 
         <div class="portfolio__skills hidden">
-          <span>Coming soon...</span>
+          <img
+            alt="typescript"
+            src="./src/assets/icons/skills/typescript.svg"
+          />
+          <img
+            alt="javascript"
+            src="./src/assets/icons/skills/javascript.svg"
+          />
+          <img alt="react" src="./src/assets/icons/skills/react.svg" />
+          <img alt="redux" src="./src/assets/icons/skills/redux.svg" />
+          <img alt="redux-saga" src="./src/assets/icons/skills/reduxSaga.svg" />
+          <img alt="nodeJS" src="./src/assets/icons/skills/node.svg" />
+          <img alt="next" src="./src/assets/icons/skills/next.svg" />
+          <img alt="mongoDB" src="./src/assets/icons/skills/mongoDB.svg" />
+          <img alt="graphql" src="./src/assets/icons/skills/graphql.svg" />
+          <img alt="html5" src="./src/assets/icons/skills/html.svg" />
+          <img alt="css3" src="./src/assets/icons/skills/css.svg" />
+          <img alt="sass" src="./src/assets/icons/skills/sass.svg" />
+          <img alt="less" src="./src/assets/icons/skills/less.svg" />
+          <img alt="tailwind" src="./src/assets/icons/skills/tailwind.svg" />
+          <img alt="heroku" src="./src/assets/icons/skills/heroku.svg" />
         </div>
       </section>
     </main>
+
     <footer>
       <span>© Kryvanosava Lizaveta. 2023 All rights reserved</span>
     </footer>
+
+    <a href="#scroll-to" id="scroll-to-top">
+      <img src="./src/assets/icons/arrow.svg" alt="scroll to top" />
+    </a>
+
+    <div id="modal" class="modal">
+      <form class="modal__form" id="modal-form">
+        <button type="button" class="modal__form--close" id="close-modal">
+          <img src="./src/assets/icons/cross.svg" alt="close modal" />
+        </button>
+
+        <div class="modal__section">
+          <input
+            name="first-name"
+            class="modal__input"
+            type="text"
+            placeholder="*First Name..."
+            required
+          />
+
+          <input
+            name="last-name"
+            class="modal__input"
+            type="text"
+            placeholder="*Last Name..."
+            required
+          />
+        </div>
+
+        <div class="modal__section">
+          <input
+            type="number"
+            name="number"
+            class="modal__input"
+            placeholder="*Phone..."
+            required
+          />
+
+          <input
+            name="countries"
+            class="modal__input"
+            list="countries"
+            placeholder="Your country..."
+          />
+
+          <datalist id="countries">
+            <option value="Belarus" />
+            <option value="Ukraine" />
+            <option value="Georgia" />
+            <option value="Poland" />
+            <option value="United States" />
+            <option value="other" />
+          </datalist>
+        </div>
+
+        <div class="modal__section">
+          <textarea
+            name="modal-textarea"
+            class="modal__input"
+            placeholder="Your message..."
+          ></textarea>
+        </div>
+
+        <button type="submit" class="modal__form--submit">Submit</button>
+        <button type="reset" class="modal__form--reset">Reset form</button>
+      </form>
+
+      <div class="modal__shield"></div>
+    </div>
   </body>
-  <script src="./index.js"></script>
+  <script src="./src/scripts/theme.js"></script>
+  <script src="./src/scripts/portfolioTabs.js"></script>
+  <script src="./src/scripts/hideScroll.js"></script>
+  <script src="./src/scripts/modal.js"></script>
 </html>
